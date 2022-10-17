@@ -37,11 +37,19 @@ items[counterImages].classList.add("active");
 next.addEventListener("click", function(){
   items[counterImages].classList.remove("active");
   items[++counterImages].classList.add("active");
-  previous.classList.remove("hide")
+
+  previous.classList.remove("hide");
+  if(counterImages === imagesArray.length -1){
+    next.classList.add("hide");
+  }
 });
 
 previous.addEventListener("click", function(){
   items[counterImages].classList.remove("active");
   items[--counterImages].classList.add("active");
-  console.log("PREV");
+
+  next.classList.remove("hide");
+  if(counterImages === 0){
+    previous.classList.add("hide");
+  }
 });
