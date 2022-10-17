@@ -1,5 +1,5 @@
-console.log("ARRAYCAROUSEL");
 
+// VARIABLES DECLARATION AND INITIALIZATION
 const imagesArray = [
   "01.jpg",
   "02.jpg",
@@ -13,6 +13,7 @@ const itemsWrapper = document.querySelector(".items-wrapper");
 
 let imagesTags = " ";
 
+// Conditional statement for images visualization
 for(let i = 0; i < imagesArray.length; i++){
 
   imagesTags += `
@@ -22,18 +23,19 @@ for(let i = 0; i < imagesArray.length; i++){
 
 let counterImages = 0;
 
+// buttons
 const next = document.querySelector(".down");
 const previous = document.querySelector(".up");
 previous.classList.add("hide")
 
+//imageTags
 itemsWrapper.innerHTML = imagesTags;
-
-console.log('imagesTags', imagesTags)
 
 const items = document.getElementsByClassName("item");
 
 items[counterImages].classList.add("active");
 
+//FUNCTION CLICK CHANGE IMG
 next.addEventListener("click", function(){
   items[counterImages].classList.remove("active");
   items[++counterImages].classList.add("active");
