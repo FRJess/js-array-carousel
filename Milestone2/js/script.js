@@ -1,3 +1,5 @@
+console.log("ARRAYCAROUSEL");
+
 const imagesArray = [
   "01.jpg",
   "02.jpg",
@@ -6,14 +8,15 @@ const imagesArray = [
   "05.jpg",
 ];
 
+//add images to html file
+const itemsWrapper = document.querySelector(".items-wrapper");
+
 let imagesTags = " ";
 
-const slider = document.querySelector(".items-wrapper");
-
-for(let i = 0; i < imagesArray.lenght; i++){
+for(let i = 0; i < imagesArray.length; i++){
 
   imagesTags += `
-    <img class="item" src="img/${imagesArray[i]}" alt="${imagesArray[i]}">
+    <img src="img/${imagesArray[i]}" alt="${imagesArray[i]}" class="item">
   `;
 }
 
@@ -21,8 +24,11 @@ let counterImages = 0;
 
 const next = document.querySelector(".down");
 const previous = document.querySelector(".up");
+previous.classList.add("hide")
 
-slider.innerHTML += imagesTags;
+itemsWrapper.innerHTML = imagesTags;
+
+console.log('imagesTags', imagesTags)
 
 const items = document.getElementsByClassName("item");
 
@@ -30,9 +36,8 @@ items[counterImages].classList.add("active");
 
 next.addEventListener("click", function(){
   items[counterImages].classList.remove("active");
-  counterImages++;
-  items[counterImages].classList.add("active");
-  console.log(counterImages);
+  items[++counterImages].classList.add("active");
+  previous.classList.remove("hide")
 });
 
 previous.addEventListener("click", function(){
