@@ -6,7 +6,7 @@
 
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: aquamarine;
+  background-color: #E6E6E6;
   color: white;
 }
 
@@ -20,7 +20,7 @@ body{
 .container{
   width: 60%;
   height: 50%;
-  background-color: brown;
+  background-color: #297373;
 }
 
 .slider{
@@ -48,7 +48,7 @@ body{
 }
 
 .btn-arrow:hover{
-  color: gold;
+  color: #E9D758;
 }
 
 .btn-arrow.up{
